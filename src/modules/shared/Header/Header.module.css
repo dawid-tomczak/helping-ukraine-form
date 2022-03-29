@@ -1,0 +1,27 @@
+.header {
+  width: 100vw;
+  padding: 30px 60px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.header__language {
+  min-widh: 200px;
+}
+
+.language__button {
+  margin: 0px 15px;
+}
+
+@media (min-width: 480px) {
+  .header {
+    justify-content: space-between;
+  }
+}
