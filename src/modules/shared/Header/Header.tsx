@@ -1,7 +1,7 @@
+// import React from 'react';
 import { Button, Typography } from '@mui/material';
-import styles from './Header.module.css';
-import React from 'react';
 import { useTranslation } from 'react-i18next';
+import styles from './Header.module.css';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -19,7 +19,7 @@ const Header = () => {
             <Button
               key={lang}
               variant='outlined'
-              className={styles.language__button}
+              className={styles.language_button}
               onClick={() => i18n.changeLanguage(lang)}
               disabled={i18n.resolvedLanguage === lang}
             >
