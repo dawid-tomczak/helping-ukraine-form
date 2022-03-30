@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import { Button, Typography } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import styles from './Header.module.css';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Typography className={styles.header__title}>
+      <Typography className={styles.header__title} variant='h4' component='h1'>
         {t('Kartka z areny')}
       </Typography>
       <div className={styles.header__language}>
@@ -21,7 +21,7 @@ const Header = () => {
               variant='outlined'
               onClick={() => i18n.changeLanguage(lang)}
               disabled={i18n.resolvedLanguage === lang}
-              classes={styles.language_button}
+              className={styles.language__button}
             >
               {lang.toUpperCase()}
             </Button>
