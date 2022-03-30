@@ -20,11 +20,27 @@ i18n
       pl: {
         translation: {
           'Kartka z areny': 'Kartka z areny',
+          'Czego brakuje?': 'Czego brakuje?',
+          Produkt: 'Produkt',
+          Chleb: 'Chleb',
+          Mleko: 'Mleko',
+          Płatki: 'Płatki',
+          Bułki: 'Bułki',
+          Ilość: 'Ilość',
+          Prześlij: 'Prześlij',
         },
       },
       ua: {
         translation: {
           'Kartka z areny': 'Листівка з арени',
+          'Czego brakuje?': 'Чого не вистачає?',
+          Produkt: 'Продукт',
+          Chleb: 'Хліб',
+          Mleko: 'Молоко',
+          Płatki: 'Зернові',
+          Bułki: 'Булочки',
+          Ilość: 'Кількість',
+          Prześlij: 'Подати',
         },
       },
     },

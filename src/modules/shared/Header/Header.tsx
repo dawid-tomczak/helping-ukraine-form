@@ -19,9 +19,9 @@ const Header = () => {
             <Button
               key={lang}
               variant='outlined'
-              className={styles.language_button}
               onClick={() => i18n.changeLanguage(lang)}
               disabled={i18n.resolvedLanguage === lang}
+              classes={styles.language_button}
             >
               {lang.toUpperCase()}
             </Button>

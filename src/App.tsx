@@ -1,13 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button } from '@mui/material';
 import Header from './modules/shared/Header/Header';
+import ContentWrapper from './modules/shared/ContentWrapper/ContentWrapper';
+import Form from './modules/Form/Form';
 
 function App() {
   return (
     <>
       <Header />
+      <ContentWrapper>
+        <Form />
+      </ContentWrapper>
     </>
   );
 }
