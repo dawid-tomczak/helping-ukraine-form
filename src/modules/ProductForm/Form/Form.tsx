@@ -62,7 +62,7 @@ const Form = ({ categories, products }: Props): ReactElement => {
                     key={category.id}
                     value={category.id}
                     control={<Radio />}
-                    label={category.name['PL']}
+                    label={category.name[i18n.language as 'PL' | 'UK']}
                   />
                 );
               })}
@@ -72,7 +72,9 @@ const Form = ({ categories, products }: Props): ReactElement => {
           <Autocomplete
             className={styles.form__input}
             options={products}
-            getOptionLabel={(option) => option.name.PL}
+            getOptionLabel={(option) =>
+              option.name[i18n.language as 'PL' | 'UK']
+            }
             renderInput={(params) => (
               <TextField {...params} label={t('Produkt')} />
             )}
