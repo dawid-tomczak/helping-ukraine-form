@@ -17,7 +17,7 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      pl: {
+      PL: {
         translation: {
           'Kartka z areny': 'Kartka z areny',
           'Czego brakuje?': 'Czego brakuje?',
@@ -30,7 +30,7 @@ i18n
           Prześlij: 'Prześlij',
         },
       },
-      ua: {
+      UK: {
         translation: {
           'Kartka z areny': 'Листівка з арени',
           'Czego brakuje?': 'Чого не вистачає?',

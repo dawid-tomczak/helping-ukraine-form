@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Header = () => {
   const { t, i18n } = useTranslation();
 
-  const languages: string[] = ['pl', 'ua'];
+  const languages: string[] = ['PL', 'UK'];
 
   return (
     <header className={styles.header}>
@@ -23,7 +23,7 @@ const Header = () => {
               disabled={i18n.resolvedLanguage === lang}
               className={styles.language__button}
             >
-              {lang.toUpperCase()}
+              {lang}
             </Button>
           );
         })}
