@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
-import styles from './Header.module.css';
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
@@ -9,25 +8,33 @@ const Header = () => {
   const languages: string[] = ['PL', 'UK'];
 
   return (
-    <header className={styles.header}>
-      <Typography className={styles.header__title} variant='h4' component='h1'>
-        {t('Kartka z areny')}
-      </Typography>
-      <div className={styles.header__language}>
-        {languages.map((lang) => {
-          return (
-            <Button
-              key={lang}
-              variant='outlined'
-              onClick={() => i18n.changeLanguage(lang)}
-              disabled={i18n.resolvedLanguage === lang}
-              className={styles.language__button}
-            >
-              {lang}
-            </Button>
-          );
-        })}
-      </div>
+    <header>
+      <AppBar position='static'>
+        <Toolbar
+          variant='regular'
+          sx={{ backgroundColor: '#ededed', color: 'black' }}
+        >
+          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+            {t('Kartka z areny')}
+          </Typography>
+          {languages.map((lang) => {
+            return (
+              <Button
+                key={lang}
+                variant='outlined'
+                sx={{
+                  marginLeft: '8px',
+                  marginRight: '8px',
+                }}
+                onClick={() => i18n.changeLanguage(lang)}
+                disabled={i18n.resolvedLanguage === lang}
+              >
+                {lang}
+              </Button>
+            );
+          })}
+        </Toolbar>
+      </AppBar>
     </header>
   );
 };
