@@ -1,12 +1,22 @@
-import React, { ReactElement, useCallback, useEffect, useState } from 'react';
+import React, {
+  ReactElement,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Category } from '../../@types/helpers/Category';
+import { Need } from '../../@types/helpers/Need';
 import { Product } from '../../@types/helpers/Product';
+import { NeedsContext } from '../../contexts/NeedsContext';
 import { getCategories, getProducts } from '../../helpers/ProductsAPI';
 import Form from './Form/Form';
 
 export const ProductFormManager = (): ReactElement => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+
+  const { needs, addNeed } = useContext(NeedsContext);
 
   const downloadCategories = useCallback(async () => {
     const downloadedCategories = await getCategories();
@@ -23,5 +33,7 @@ export const ProductFormManager = (): ReactElement => {
     downloadProducts();
   }, []);
 
-  return <Form categories={categories} products={products} />;
+  return (
+    <Form onSubmit={addNeed} categories={categories} products={products} />
+  );
 };

@@ -18,14 +18,17 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Category } from '../../../@types/helpers/Category';
 import { Product } from '../../../@types/helpers/Product';
+import { Need } from '../../../@types/helpers/Need';
+
 interface Props {
   categories: Category[];
   products: Product[];
+  onSubmit: (need: Need) => void;
 }
 
 const formVariant = 'standard';
 
-const Form = ({ categories, products }: Props): ReactElement => {
+const Form = ({ categories, products, onSubmit }: Props): ReactElement => {
   const { t, i18n } = useTranslation();
 
   const [nameInput, setNameInput] = useState<string>('');
@@ -55,16 +58,15 @@ const Form = ({ categories, products }: Props): ReactElement => {
   };
 
   const handleSubmit = (): void => {
-    const elementToAdd = {
+    const elementToAdd: Need = {
       name: nameInput,
-      category: categoryInput,
-      product: productInput,
-      amount: amountInput,
-      inputLang: i18n.language,
+      categoryId: categoryInput,
+      productId: productInput,
+      amount: +amountInput,
+      inputLanguage: i18n.language,
     };
 
-    console.log('elementToAdd :>> ', elementToAdd);
-
+    onSubmit(elementToAdd);
     resetForm();
   };
 

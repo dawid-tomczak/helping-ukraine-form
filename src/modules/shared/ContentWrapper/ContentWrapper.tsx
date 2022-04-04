@@ -1,12 +1,11 @@
-import { Container } from '@mui/material';
 import React, { ReactElement } from 'react';
-import styles from './ContentWrapper.module.css';
+import { Container } from '@mui/material';
 
 interface Props {
   children: ReactElement;
 }
 const ContentWrapper = ({ children }: Props): ReactElement => (
-  <Container className={styles.wrapper}>{children}</Container>
+  <Container>{children}</Container>
 );
 
 export default ContentWrapper;
