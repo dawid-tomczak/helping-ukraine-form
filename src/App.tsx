@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './modules/shared/Header/Header';
 import ContentWrapper from './modules/shared/ContentWrapper/ContentWrapper';
-import { ProductFormManager } from './modules/ProductForm/ProductFormManager';
+import { NeedFormManager } from './modules/NeedForm/NeedFormManager';
 import { NeedsContextProvider } from './contexts/NeedsContext';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <ContentWrapper>
         <NeedsContextProvider>
-          <ProductFormManager />
+          <NeedFormManager />
         </NeedsContextProvider>
       </ContentWrapper>
     </>

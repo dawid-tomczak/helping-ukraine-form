@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React, {
   ReactElement,
   useCallback,
@@ -6,13 +7,12 @@ import React, {
   useState,
 } from 'react';
 import { Category } from '../../@types/helpers/Category';
-import { Need } from '../../@types/helpers/Need';
 import { Product } from '../../@types/helpers/Product';
 import { NeedsContext } from '../../contexts/NeedsContext';
 import { getCategories, getProducts } from '../../helpers/ProductsAPI';
 import Form from './Form/Form';
 
-export const ProductFormManager = (): ReactElement => {
+export const NeedFormManager = (): ReactElement => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -34,6 +34,11 @@ export const ProductFormManager = (): ReactElement => {
   }, []);
 
   return (
-    <Form onSubmit={addNeed} categories={categories} products={products} />
+    <section>
+      <Typography variant='h4' component='h1'>
+        Co potrzeba?
+      </Typography>
+      <Form onSubmit={addNeed} categories={categories} products={products} />
+    </section>
   );
 };
