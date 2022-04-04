@@ -5,5 +5,5 @@ import { NeedsTable } from './NeedsTable/NeedsTable';
 export const AddedNeeds = (): ReactElement => {
   const { needs } = useContext(NeedsContext);
 
-  return <NeedsTable needs={needs} />;
+  return needs.length > 0 ? <NeedsTable needs={needs} /> : <></>;
 };

@@ -34,11 +34,6 @@ export const NeedFormManager = (): ReactElement => {
   }, []);
 
   return (
-    <section>
-      <Typography variant='h4' component='h1'>
-        Co potrzeba?
-      </Typography>
-      <Form onSubmit={addNeed} categories={categories} products={products} />
-    </section>
+    <Form onSubmit={addNeed} categories={categories} products={products} />
   );
 };
