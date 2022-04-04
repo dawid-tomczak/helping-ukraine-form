@@ -103,7 +103,11 @@ const Form = ({ categories, products, onSubmit }: Props): ReactElement => {
           </RadioGroup>
         </FormControl>
 
-        <FormControl variant={formVariant} required>
+        <FormControl
+          variant={formVariant}
+          required
+          disabled={availableProducts.length === 0}
+        >
           <InputLabel htmlFor='product-input-label'>{t('Produkt')}</InputLabel>
           <Select
             labelId='product-input-label'
