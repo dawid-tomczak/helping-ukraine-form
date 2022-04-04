@@ -7,6 +7,7 @@ import {
   FormLabel,
   Grid,
   Input,
+  InputAdornment,
   InputLabel,
   MenuItem,
   Radio,
@@ -36,6 +37,12 @@ const Form = ({ categories, products }: Props): ReactElement => {
     categoryInput !== ''
       ? products.filter((product) => product.categoryId === categoryInput)
       : [];
+
+  const adornment = productInput
+    ? products.find((product) => product.id === productInput)?.unit[
+        i18n.language as 'PL' | 'UK'
+      ]
+    : '';
 
   const resetForm = (fullReset = false) => {
     setCategoryInput('');
@@ -103,10 +110,10 @@ const Form = ({ categories, products }: Props): ReactElement => {
             label={t('Produkt')}
             onChange={(event) => setProductInput(event.target.value)}
           >
-            {availableProducts.map((category) => {
+            {availableProducts.map((product) => {
               return (
-                <MenuItem key={category.id} value={category.id}>
-                  {category.name[i18n.language as 'PL' | 'UK']}
+                <MenuItem key={product.id} value={product.id}>
+                  {product.name[i18n.language as 'PL' | 'UK']}
                 </MenuItem>
               );
             })}
@@ -121,6 +128,9 @@ const Form = ({ categories, products }: Props): ReactElement => {
             onChange={(event) => setAmountInput(event.target.value)}
             id='amount-input'
             aria-describedby='amount-input'
+            endAdornment={
+              <InputAdornment position='end'>{adornment}</InputAdornment>
+            }
           />
         </FormControl>
         <Grid container justifyContent='flex-end' columns={10}>
