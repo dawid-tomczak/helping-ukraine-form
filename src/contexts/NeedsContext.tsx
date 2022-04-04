@@ -7,7 +7,7 @@ interface ContextProps {
 }
 
 interface ProviderProps {
-  children: ReactChildren | ReactElement;
+  children: ReactChildren | ReactElement | ReactElement[];
 }
 
 export const NeedsContext = React.createContext<ContextProps>({
